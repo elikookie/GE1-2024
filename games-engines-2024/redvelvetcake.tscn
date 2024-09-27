@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://d3h6ca34xl4g2"]
+[gd_scene load_steps=9 format=3 uid="uid://d3h6ca34xl4g2"]
 
 [ext_resource type="Material" uid="uid://w641big3kf00" path="res://yellow.tres" id="1_uxrqx"]
 [ext_resource type="Material" uid="uid://ciwl3cxcsufhw" path="res://pink.tres" id="2_rllww"]
 [ext_resource type="Script" path="res://player.gd" id="3_vox6c"]
+[ext_resource type="Script" path="res://wall.gd" id="4_nf4af"]
+[ext_resource type="PackedScene" uid="uid://ctlll4p0vpr6k" path="res://brick_scene.tscn" id="5_cf50h"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_bx428"]
 size = Vector2(100, 100)
@@ -38,3 +40,7 @@ transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 3, 4)
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.496838, -0.604139, -0.623032, -0.0351914, -0.731342, 0.681102, -0.86713, -0.316472, -0.384619, -36, 23.8698, 7)
 shadow_enabled = true
+
+[node name="wall" type="Node3D" parent="."]
+script = ExtResource("4_nf4af")
+brick_scene = ExtResource("5_cf50h")
