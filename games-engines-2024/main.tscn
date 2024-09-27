@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://d3h6ca34xl4g2"]
+
+[ext_resource type="Material" uid="uid://w641big3kf00" path="res://yellow.tres" id="1_lw5xi"]
+[ext_resource type="Material" uid="uid://ciwl3cxcsufhw" path="res://pink.tres" id="2_qul5n"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_bx428"]
+size = Vector2(100, 100)
+
+[sub_resource type="BoxMesh" id="BoxMesh_l8exx"]
+material = ExtResource("2_qul5n")
+size = Vector3(1, 2, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_8vw5b"]
+material = ExtResource("2_qul5n")
+size = Vector3(0.1, 0.1, 1)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="ground" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_bx428")
+surface_material_override/0 = ExtResource("1_lw5xi")
+
+[node name="player" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, 0, 0, 0)
+material_override = ExtResource("2_qul5n")
+mesh = SubResource("BoxMesh_l8exx")
+
+[node name="turret" type="MeshInstance3D" parent="player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01044, 0.835941)
+mesh = SubResource("BoxMesh_8vw5b")
+skeleton = NodePath("../..")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 3, 4)
