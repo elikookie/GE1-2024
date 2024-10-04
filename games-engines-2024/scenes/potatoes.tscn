@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://d2cnv7v7huh3k"]
+[gd_scene load_steps=17 format=3 uid="uid://d2cnv7v7huh3k"]
 
 [ext_resource type="Script" path="res://scenes/TPCamera.gd" id="1_1bql5"]
 [ext_resource type="Material" uid="uid://dvo75cymypytd" path="res://green.tres" id="1_ljfv3"]
@@ -7,6 +7,21 @@
 [ext_resource type="Script" path="res://scenes/wall.gd" id="4_x4eqr"]
 [ext_resource type="PackedScene" uid="uid://buu3aq61omx1k" path="res://brick.tscn" id="5_nw2f7"]
 [ext_resource type="PackedScene" uid="uid://c1bnq83851e46" path="res://bullet.tscn" id="6_ngcvm"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vv45y"]
+sky_top_color = Color(1, 0.0580446, 0.62766, 1)
+sky_horizon_color = Color(0.269905, 0.689863, 0.982806, 1)
+ground_bottom_color = Color(0.171163, 0.111973, 0.386195, 1)
+ground_horizon_color = Color(3.08037e-06, 0.713282, 0.952339, 1)
+
+[sub_resource type="Sky" id="Sky_q2qk8"]
+sky_material = SubResource("ProceduralSkyMaterial_vv45y")
+
+[sub_resource type="Environment" id="Environment_hyhmm"]
+background_mode = 2
+sky = SubResource("Sky_q2qk8")
+tonemap_mode = 2
+glow_enabled = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_00q4b"]
 size = Vector2(100, 100)
@@ -25,6 +40,9 @@ size = Vector3(0.1, 0.1, 1)
 
 [node name="root" type="Node3D"]
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_hyhmm")
+
 [node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("target", "player")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.687456, 7.28339)
 script = ExtResource("1_1bql5")
@@ -32,7 +50,7 @@ target = NodePath("../tank/cam_target")
 player = NodePath("../tank")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.597812, 0.487615, 0.63628, -0.63207, 0.774911, 0, -0.493061, -0.402174, 0.771458, 0, 0, 0)
+transform = Transform3D(0.597812, 0.487615, 0.63628, 0.0982941, -0.832325, 0.545503, 0.795587, -0.263565, -0.545503, 33, 30.1181, 0)
 
 [node name="wall" type="Node3D" parent="."]
 transform = Transform3D(0.470596, 0, 0.882349, 0, 1, 0, -0.882349, 0, 0.470596, 0, 0, -15.2278)
