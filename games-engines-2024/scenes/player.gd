@@ -45,9 +45,13 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_pressed("shoot"):
 		var bullet = bullet_scene.instantiate()
-		get_parent().add_child(bullet)
+		var t = Timer.new()
+		t.wait_time = 2.0
+		
+		if t.time_left == 0:
+			get_parent().add_child(bullet)
+			bullet.global_position = bullet_spawn.global_position
+			bullet.global_rotation = global_rotation
 	
-		bullet.global_position = bullet_spawn.global_position
-		bullet.global_rotation = global_rotation
 	
 	pass
