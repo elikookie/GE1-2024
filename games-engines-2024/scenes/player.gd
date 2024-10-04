@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-@export var speed:float = -1
+@export var speed:float = 2
 @export var rot_speed = 180.0
 
 @export var bullet_scene:PackedScene
@@ -22,7 +22,7 @@ func _physics_process(delta: float) -> void:
 	var v = Vector3()	
 	v = global_transform.basis.z	
 	print(global_transform.basis.z)	 
-	velocity = - v * speed * f
+	velocity = v * speed * f
 	
 	move_and_slide()
 	
