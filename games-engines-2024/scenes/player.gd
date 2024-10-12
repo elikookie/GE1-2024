@@ -50,8 +50,8 @@ func _physics_process(delta: float) -> void:
 		
 		if t.time_left == 0:
 			get_parent().add_child(bullet)
-			bullet.global_position = bullet_spawn.global_position
-			bullet.global_rotation = global_rotation
+		bullet.global_position = bullet_spawn.global_position
+		bullet.global_rotation = global_rotation
 	
 	
 	pass
