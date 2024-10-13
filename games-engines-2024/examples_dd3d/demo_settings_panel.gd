@@ -2,7 +2,7 @@
 extends Control
 
 @export var switch_to_scene = ""
-var is_ready := false
+var is_ready := false 
 
 func _ready():
 	if Engine.is_editor_hint():
