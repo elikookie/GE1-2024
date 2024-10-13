@@ -9,8 +9,6 @@ func _physics_process(delta: float) -> void:
 	if c:
 		var b = c.get_collider()
 		b.queue_free()
-
-		
 		self.queue_free()
 		pass
 
