@@ -9,7 +9,7 @@ extends CharacterBody3D
 @export var fire_rate:int = 10
 
 @onready  var timer = $Timer
-@onready var audio_player = $AudioStreamPlayer
+@onready var audio_player = $AudioStreamPlayer3D
 
 func print_stuff():
 	DebugDraw2D.set_text("position", position)
