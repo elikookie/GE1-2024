@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://d2cnv7v7huh3k"]
+[gd_scene load_steps=16 format=3 uid="uid://d2cnv7v7huh3k"]
 
 [ext_resource type="Script" path="res://scenes/TPCamera.gd" id="1_1bql5"]
 [ext_resource type="Material" uid="uid://dvo75cymypytd" path="res://green.tres" id="1_ljfv3"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://buu3aq61omx1k" path="res://brick.tscn" id="5_nw2f7"]
 [ext_resource type="PackedScene" uid="uid://c1bnq83851e46" path="res://bullet.tscn" id="6_ngcvm"]
 [ext_resource type="Script" path="res://scenes/tower.gd" id="8_57hm3"]
+[ext_resource type="AudioStream" uid="uid://c8nu2fxajyd8p" path="res://shootSound.mp3" id="8_102gp"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_00q4b"]
 size = Vector2(100, 100)
@@ -86,6 +87,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.54856, 1.64877)
 [node name="Timer" type="Timer" parent="tank"]
 one_shot = true
 
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="tank"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+stream = ExtResource("8_102gp")
+
 [node name="tower" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4738, 0.5, 13.1969)
 script = ExtResource("8_57hm3")
@@ -93,5 +98,3 @@ brick_scene = ExtResource("5_nw2f7")
 radius = 5.0
 elements = 22
 brick_size = 1.0
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]

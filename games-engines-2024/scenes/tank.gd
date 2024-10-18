@@ -9,6 +9,7 @@ extends CharacterBody3D
 @export var fire_rate:int = 10
 
 @onready  var timer = $Timer
+@onready var audio_player = $AudioStreamPlayer
 
 func print_stuff():
 	DebugDraw2D.set_text("position", position)
@@ -59,6 +60,7 @@ func _physics_process(delta: float) -> void:
 	
 	if can_fire and Input.is_action_pressed("shoot"):
 		var bullet = bullet_scene.instantiate()
+		audio_player.play()
 		get_parent().add_child(bullet)
 		can_fire = false
 		bullet.global_position = bullet_spawn.global_position
