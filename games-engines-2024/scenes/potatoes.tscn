@@ -93,3 +93,5 @@ brick_scene = ExtResource("5_nw2f7")
 radius = 5.0
 elements = 22
 brick_size = 1.0
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
