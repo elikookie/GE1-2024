@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://bcred76q6oolr"]
+[gd_scene load_steps=26 format=4 uid="uid://bcred76q6oolr"]
 
 [ext_resource type="Script" path="res://scenes/wall.gd" id="1_3slfy"]
 [ext_resource type="PackedScene" uid="uid://buu3aq61omx1k" path="res://brick.tscn" id="2_loxll"]
@@ -8,6 +8,24 @@
 [ext_resource type="Texture2D" uid="uid://de0232smetf0t" path="res://vehicles/Textures/colormap.png" id="6_tw3gb"]
 [ext_resource type="AudioStream" uid="uid://cvqw5loagu0fw" path="res://vehicles/engine.wav" id="7_b7mui"]
 [ext_resource type="Script" path="res://scenes/TPCamera.gd" id="8_2a3ym"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wrw0n"]
+sky_top_color = Color(0.0595517, 0.226794, 0.197152, 1)
+sky_horizon_color = Color(0.514888, 0.60858, 0.595611, 1)
+sky_curve = 0.204906
+ground_bottom_color = Color(0, 0.207528, 0.185291, 1)
+ground_horizon_color = Color(0.514888, 0.60858, 0.595611, 1)
+sun_curve = 0.130583
+energy_multiplier = 0.0
+
+[sub_resource type="Sky" id="Sky_hovv0"]
+sky_material = SubResource("ProceduralSkyMaterial_wrw0n")
+
+[sub_resource type="Environment" id="Environment_ay5f8"]
+background_mode = 2
+sky = SubResource("Sky_hovv0")
+tonemap_mode = 2
+glow_enabled = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_00q4b"]
 size = Vector2(100, 100)
@@ -194,6 +212,9 @@ shadow_mesh = SubResource("ArrayMesh_p4w6q")
 size = Vector3(1.49951, 1.55765, 2.80151)
 
 [node name="root" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ay5f8")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.486978, -0.857167, -0.16768, -0.325568, -1.4231e-08, 0.945518, -0.810468, 0.515038, -0.279066, 0, 0, 0)
