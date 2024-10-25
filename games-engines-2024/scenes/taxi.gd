@@ -4,7 +4,7 @@ const STEER_SPEED = 1.5
 const STEER_LIMIT = 0.4
 const BRAKE_STRENGTH = 2.0
 
-@export var engine_force_value := 40.0
+@export var engine_force_value := 50.0
 
 var previous_speed := linear_velocity.length()
 var _steer_target := 0.0
