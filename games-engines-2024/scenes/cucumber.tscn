@@ -97,7 +97,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4738, 0.5, 13.1969)
 script = ExtResource("8_f610v")
 brick_scene = ExtResource("3_ckcpv")
 radius = 5.0
-height = null
 elements = 22
 brick_size = 1.0
 
