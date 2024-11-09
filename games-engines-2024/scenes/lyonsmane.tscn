@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cajvwsg0035us"]
+[gd_scene load_steps=14 format=3 uid="uid://cajvwsg0035us"]
 
 [ext_resource type="Script" path="res://scenes/wall.gd" id="1_4h7ie"]
 [ext_resource type="Script" path="res://scenes/music_toys.gd" id="1_oo4ip"]
@@ -15,6 +15,19 @@ size = Vector2(100, 100)
 [sub_resource type="Environment" id="Environment_c4jos"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_uox6i"]
+
+[sub_resource type="CurveTexture" id="CurveTexture_r5m7d"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_wed17"]
+lifetime_randomness = 0.12
+initial_velocity_min = 88.37
+initial_velocity_max = 158.14
+color = Color(0.878431, 0.52549, 0.137255, 1)
+emission_curve = SubResource("CurveTexture_r5m7d")
+anim_speed_min = 1.71
+anim_speed_max = 1.71
+
+[sub_resource type="PrismMesh" id="PrismMesh_geonh"]
 
 [node name="root" type="Node3D"]
 script = ExtResource("1_oo4ip")
@@ -44,6 +57,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4738, 0.5, 13.1969)
 script = ExtResource("4_kmmxv")
 brick_scene = ExtResource("2_1a2di")
 radius = 5.0
+height = null
 elements = 22
 brick_size = 1.0
 
@@ -66,3 +80,7 @@ tracker = &"right_hand"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="player"]
 shape = SubResource("CapsuleShape3D_uox6i")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+process_material = SubResource("ParticleProcessMaterial_wed17")
+draw_pass_1 = SubResource("PrismMesh_geonh")

@@ -6,6 +6,7 @@ extends Marker3D
 @export var height:float = 10
 @export var elements = 40
 @export var brick_size = 0.1
+@export var particle_scene:PackedScene 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:	
@@ -28,6 +29,12 @@ func _ready() -> void:
 			m.albedo_color = Color.from_hsv(c, 1, 1)
 			brick.get_node("MeshInstance3D").set_surface_override_material(0, m)
 			add_child(brick)
+			
+		if particle_scene:
+			var fire_particles = particle_scene.instantiate()
+			fire_particles.global_position = brick.global_position
+			brick.add_child(fire_particles)
+			
 	pass # Replace with function body.
 
 

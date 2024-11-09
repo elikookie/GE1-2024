@@ -1,15 +1,13 @@
-[gd_scene load_steps=26 format=3 uid="uid://prvigccg8cta"]
+[gd_scene load_steps=24 format=3 uid="uid://prvigccg8cta"]
 
 [ext_resource type="Script" path="res://scenes/music_toys.gd" id="1_vwdhj"]
 [ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="3_widw5"]
 [ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="4_d1xpo"]
 [ext_resource type="Material" uid="uid://dvo75cymypytd" path="res://green.tres" id="4_sxyf8"]
 [ext_resource type="PackedScene" uid="uid://c22b64h4ohfjt" path="res://pad.tscn" id="6_0k6bf"]
-[ext_resource type="AudioStream" uid="uid://b85mjbi4mwe7" path="res://samples/openhat-808.wav" id="7_oecbk"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/player/player_body.gd" id="8_0wnol"]
 [ext_resource type="AudioStream" uid="uid://7aqthiagg7qm" path="res://samples/crash-noise.wav" id="8_bvc17"]
 [ext_resource type="AudioStream" uid="uid://dpvri6hi60geh" path="res://samples/hihat-acoustic01.wav" id="9_e2wsw"]
-[ext_resource type="AudioStream" uid="uid://bxbht3mfl2tof" path="res://samples/kick-classic.wav" id="10_uxytj"]
 [ext_resource type="AudioStream" uid="uid://b85mjbi4mwe7" path="res://samples/openhat-808.wav" id="11_fqvv2"]
 [ext_resource type="AudioStream" uid="uid://jy6neu5sxngs" path="res://samples/perc-weirdo.wav" id="12_b7p7j"]
 [ext_resource type="Script" path="res://FPController.gd" id="12_g01t0"]
@@ -17,7 +15,6 @@
 [ext_resource type="AudioStream" uid="uid://bxbht3mfl2tof" path="res://samples/kick-classic.wav" id="14_311fk"]
 [ext_resource type="Script" path="res://sequencer.gd" id="15_mr8ci"]
 [ext_resource type="PackedScene" uid="uid://dm1qa5btl0821" path="res://pad_a.tscn" id="16_m0tst"]
-
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_00q4b"]
 size = Vector2(100, 100)
@@ -58,7 +55,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.313044, 2.5, 0.00152069)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.44802, 2.5, 0.00152069)
 
 [node name="AudioStreamPlayer3D" parent="pads/Pad2" index="2"]
-stream = ExtResource("7_oecbk")
+stream = ExtResource("11_fqvv2")
 
 [node name="Pad3" parent="pads" instance=ExtResource("6_0k6bf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.585482, 2.5, 0.00152069)
@@ -82,7 +79,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0341859, 2.5, 0.00152069)
 skeleton = NodePath("../../Pad2")
 
 [node name="AudioStreamPlayer3D" parent="pads/Pad5" index="2"]
-stream = ExtResource("10_uxytj")
+stream = ExtResource("14_311fk")
 
 [node name="Pad6" parent="pads" instance=ExtResource("6_0k6bf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.125599, 2.5, 0.00152069)
