@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctgg1netpt4r6"
-path.s3tc="res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.s3tc.ctex"
-path.etc2="res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.etc2.ctex"
+uid="uid://brtvg5ggkvy4o"
+path.s3tc="res://.godot/imported/holo1_heightmap.png-ba859d770db6aaf96ded033a396b1ef2.s3tc.ctex"
+path.etc2="res://.godot/imported/holo1_heightmap.png-ba859d770db6aaf96ded033a396b1ef2.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://icon.svg"
-dest_files=["res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.s3tc.ctex", "res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.etc2.ctex"]
+source_file="res://Holo/holo1_heightmap.png"
+dest_files=["res://.godot/imported/holo1_heightmap.png-ba859d770db6aaf96ded033a396b1ef2.s3tc.ctex", "res://.godot/imported/holo1_heightmap.png-ba859d770db6aaf96ded033a396b1ef2.etc2.ctex"]
 
 [params]
 
@@ -25,8 +25,8 @@ compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
+roughness/mode=7
+roughness/src_normal="res://Holo/holo1_normal.png"
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false
@@ -34,6 +34,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=0
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false
