@@ -53,13 +53,13 @@ vec2 transform2(vec2 uv, vec2 translate, float rotate, vec2 scale) {
 	rv.y = -sin(rotate)*uv.x + cos(rotate)*uv.y;
 	rv /= scale;
 	rv += vec2(0.5);
-	return rv;	
+	return rv;
 }
 vec2 rotate(vec2 uv, float rotate) {
  	vec2 rv;
 	rv.x = cos(rotate)*uv.x + sin(rotate)*uv.y;
 	rv.y = -sin(rotate)*uv.x + cos(rotate)*uv.y;
-	return rv;	
+	return rv;
 }
 float pingpong(float a, float b)
 {
@@ -452,6 +452,3 @@ vec3 o310673_0_1_rgb = process_normal_default(o310673_fct((uv), _seed_variation_
 	EMISSION = vec3(0.0)*p_o310646_emission_energy;
 
 }
-
-
-
